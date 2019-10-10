@@ -1,0 +1,24 @@
+python-dateutil     # date type
+
+# optional requirements
+requests            # http
+lxml                # html/xml
+openpyxl            # xlsx
+xlrd                # xls
+pypng               # png
+fonttools           # ttf/otf
+sas7bdat            # sas7bdat (SAS)
+xport               # xpt (SAS)
+savReaderWriter     # sav (SPSS)
+PyYAML              # yaml/yml
+dpkt                # pcap
+dnslib              # pcap
+namestand           # graphviz
+
+# plugin dependencies
+Faker               # vfake
+fecfile             # vdfec
+tabulate            # vdtabulate
+s3fs                # vds3
+
+git+git://github.com/saulpw/visidata@develop#egg=visidata
