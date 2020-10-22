@@ -11,17 +11,28 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  linux_build:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
+    - name: Cache cargo objects
+      uses: actions/cache@v2
+      env:
+        cache-name: cargo-cache
+      with:
+        path: ~/.cargo
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
     - name: Install PyOxidizer
       run: cargo install pyoxidizer
     - name: Build visidata-oxide
       run: pyoxidizer build
     - uses: actions/upload-artifact@v2
       with:
-        name: ubuntu-build
+        name: linux_build
         path: build/*/debug/install/
