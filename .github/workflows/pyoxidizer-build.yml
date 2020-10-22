@@ -1,0 +1,23 @@
+name: PyOxidizer Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: [ubuntu-latest, macos-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install PyOxidizer
+      run: cargo install pyoxidizer
+    - name: Build visidata-oxide
+      run: pyoxidizer build
