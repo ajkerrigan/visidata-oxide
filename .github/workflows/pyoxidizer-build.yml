@@ -21,3 +21,7 @@ jobs:
       run: cargo install pyoxidizer
     - name: Build visidata-oxide
       run: pyoxidizer build
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ubuntu-build
+        path: build/*/debug/install/
