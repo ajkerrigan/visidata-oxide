@@ -168,7 +168,7 @@ def make_exe(dist):
     # resources, and other options. The returned object represents the
     # standalone executable that will be built.
     exe = dist.to_python_executable(
-        name="visidata-oxide",
+        name="vdo",
 
         # If no argument passed, the default `PythonPackagingPolicy` for the
         # distribution is used.
