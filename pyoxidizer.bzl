@@ -136,7 +136,7 @@ def make_exe(dist):
 
     # Control whether `oxidized_importer` is the first importer on
     # `sys.meta_path`.
-    # python_config.oxidized_importer = False
+    python_config.oxidized_importer = True
 
     # Enable the standard path-based importer which attempts to load
     # modules from the filesystem.
@@ -196,7 +196,8 @@ def make_exe(dist):
     # to our binary.
     exe.add_python_resources(exe.pip_install(["-r", "requirements.txt"]))
 
-    
+    if 'windows' in BUILD_TARGET_TRIPLE:
+        exe.add_python_resources(exe.pip_install(["windows-curses"]))
 
     # Read Python files from a local directory and add them to our embedded
     # context, taking just the resources belonging to the `foo` and `bar`
