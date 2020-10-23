@@ -1,5 +1,7 @@
 # visidata-oxide
 
+![PyOxidizer Build](https://github.com/ajkerrigan/visidata-oxide/workflows/PyOxidizer%20Build/badge.svg)
+
 Experiments using [PyOxidizer](https://pyoxidizer.readthedocs.io/) to build [VisiData](https://www.visidata.org/) binaries that bring their own embedded Python.
 
 ### Building
