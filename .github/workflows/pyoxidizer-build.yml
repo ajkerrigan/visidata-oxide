@@ -9,6 +9,7 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  vd_version: v2.1.1
 
 jobs:
   build:
@@ -39,5 +40,5 @@ jobs:
       run: pyoxidizer build
     - uses: actions/upload-artifact@v2
       with:
-        name: visidata-oxide-${{ github.ref }}-${{ matrix.os }}
+        name: visidata-${{ env.vd_version }}-${{ matrix.os }}-${{ github.sha }}
         path: build/${{ matrix.build-triple }}/debug/install/
