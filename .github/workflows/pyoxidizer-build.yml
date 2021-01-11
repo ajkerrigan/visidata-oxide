@@ -11,31 +11,18 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  linux_build:
+  build:
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/cache@v2
-      with:
-        path: |
-          ~/.cargo/registry
-          ~/.cargo/git
-          target
-        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-    - name: Install PyOxidizer
-      run: cargo install pyoxidizer
-    - name: Build visidata-oxide
-      run: pyoxidizer build
-    - uses: actions/upload-artifact@v2
-      with:
-        name: linux_build
-        path: build/x86_64-unknown-linux-gnu/debug/install/
-
-  windows_build:
-
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            build-triple: x86_64-unknown-linux-gnu
+          - os: windows-latest
+            build-triple: x86_64-pc-windows-msvc
+          - os: macos-latest
+            build-triple: x86_64-apple-darwin
 
     steps:
     - uses: actions/checkout@v2
@@ -52,27 +39,5 @@ jobs:
       run: pyoxidizer build
     - uses: actions/upload-artifact@v2
       with:
-        name: windows_build
-        path: build/x86_64-pc-windows-msvc/debug/install/
-
-  macos_build:
-
-    runs-on: macos-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/cache@v2
-      with:
-        path: |
-          ~/.cargo/registry
-          ~/.cargo/git
-          target
-        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-    - name: Install PyOxidizer
-      run: cargo install pyoxidizer
-    - name: Build visidata-oxide
-      run: pyoxidizer build
-    - uses: actions/upload-artifact@v2
-      with:
-        name: macos_build
-        path: build/x86_64-apple-darwin/debug/install/
+        name: visidata-oxide-${{ github.ref }}-${{ matrix.os }}
+        path: build/${{ matrix.build-triple }}/debug/install/
