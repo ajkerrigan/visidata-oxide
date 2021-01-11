@@ -4,47 +4,116 @@
 #
 #    pip-compile requirements.in
 #
-aiobotocore==1.1.2        # via s3fs
-aiohttp==3.6.3            # via aiobotocore
-aioitertools==0.7.0       # via aiobotocore
-async-timeout==3.0.1      # via aiohttp
-attrs==20.2.0             # via aiohttp
-botocore==1.17.44         # via aiobotocore
-certifi==2020.6.20        # via requests
-chardet==3.0.4            # via aiohttp, requests
-click==7.1.2              # via xport
-dnslib==0.9.14            # via -r requirements.in
-docutils==0.15.2          # via botocore
-dpkt==1.9.4               # via -r requirements.in
-et-xmlfile==1.0.1         # via openpyxl
-faker==4.14.0             # via -r requirements.in
-fecfile==0.6.4            # via -r requirements.in
-fonttools==4.16.1         # via -r requirements.in
-fsspec==0.8.4             # via s3fs
-idna==2.10                # via requests, yarl
-jdcal==1.4.1              # via openpyxl
-jmespath==0.10.0          # via botocore
-lxml==4.6.1               # via -r requirements.in
-multidict==4.7.6          # via aiohttp, yarl
-namestand==0.1.1          # via -r requirements.in
-numpy==1.19.2             # via pandas
-openpyxl==3.0.5           # via -r requirements.in
-pandas==1.1.3             # via -r requirements.in, xport
-pypng==0.0.20             # via -r requirements.in
-python-dateutil==2.8.1    # via -r requirements.in, botocore, faker, pandas, visidata
-pytz==2020.1              # via fecfile, pandas
-pyyaml==5.3.1             # via -r requirements.in, xport
-requests==2.24.0          # via -r requirements.in, fecfile
-s3fs==0.5.1               # via -r requirements.in
-sas7bdat==2.2.3           # via -r requirements.in
-savreaderwriter==3.4.2    # via -r requirements.in
-six==1.15.0               # via python-dateutil, sas7bdat
-tabulate==0.8.7           # via -r requirements.in
-text-unidecode==1.3       # via faker
-typing-extensions==3.7.4.3  # via aioitertools
-urllib3==1.25.11          # via botocore, requests
-visidata==2.0.1           # via -r requirements.in
-wrapt==1.12.1             # via aiobotocore
-xlrd==1.2.0               # via -r requirements.in
-xport==3.2.1              # via -r requirements.in
-yarl==1.5.1               # via aiohttp
+aiobotocore==1.1.2
+    # via s3fs
+aiohttp==3.7.3
+    # via aiobotocore
+aioitertools==0.7.1
+    # via aiobotocore
+async-timeout==3.0.1
+    # via aiohttp
+attrs==20.3.0
+    # via aiohttp
+botocore==1.17.44
+    # via aiobotocore
+certifi==2020.12.5
+    # via requests
+chardet==3.0.4
+    # via
+    #   aiohttp
+    #   requests
+click==7.1.2
+    # via xport
+dnslib==0.9.14
+    # via -r requirements.in
+docutils==0.15.2
+    # via botocore
+dpkt==1.9.4
+    # via -r requirements.in
+et-xmlfile==1.0.1
+    # via openpyxl
+faker==5.4.0
+    # via -r requirements.in
+fecfile==0.6.4
+    # via -r requirements.in
+fonttools==4.18.2
+    # via -r requirements.in
+fsspec==0.8.5
+    # via s3fs
+idna==2.10
+    # via
+    #   requests
+    #   yarl
+jdcal==1.4.1
+    # via openpyxl
+jmespath==0.10.0
+    # via botocore
+lxml==4.6.2
+    # via -r requirements.in
+multidict==5.1.0
+    # via
+    #   aiohttp
+    #   yarl
+namestand==0.1.1
+    # via -r requirements.in
+numpy==1.19.5
+    # via pandas
+openpyxl==3.0.5
+    # via -r requirements.in
+pandas==1.2.0
+    # via
+    #   -r requirements.in
+    #   xport
+pypng==0.0.20
+    # via -r requirements.in
+python-dateutil==2.8.1
+    # via
+    #   -r requirements.in
+    #   botocore
+    #   faker
+    #   pandas
+    #   visidata
+pytz==2020.5
+    # via
+    #   fecfile
+    #   pandas
+pyyaml==5.3.1
+    # via
+    #   -r requirements.in
+    #   xport
+requests==2.25.1
+    # via
+    #   -r requirements.in
+    #   fecfile
+s3fs==0.5.2
+    # via -r requirements.in
+sas7bdat==2.2.3
+    # via -r requirements.in
+savreaderwriter==3.4.2
+    # via -r requirements.in
+six==1.15.0
+    # via
+    #   python-dateutil
+    #   sas7bdat
+tabulate==0.8.7
+    # via -r requirements.in
+text-unidecode==1.3
+    # via faker
+typing-extensions==3.7.4.3
+    # via
+    #   aiohttp
+    #   aioitertools
+urllib3==1.25.11
+    # via
+    #   botocore
+    #   requests
+visidata==2.1.1
+    # via -r requirements.in
+wrapt==1.12.1
+    # via aiobotocore
+xlrd==2.0.1
+    # via -r requirements.in
+xport==3.2.1
+    # via -r requirements.in
+yarl==1.6.3
+    # via aiohttp
