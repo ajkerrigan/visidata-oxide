@@ -159,7 +159,7 @@ def make_exe(dist):
     # python_config.run_mode = 'repl'
 
     # Evaluate a string as Python code when the interpreter starts.
-    python_config.run_mode = 'eval:import visidata.main; visidata.main.vd_cli()'
+    python_config.run_command = 'import visidata.main; visidata.main.vd_cli()'
 
     # Run a Python module as __main__ when the interpreter starts.
     # python_config.run_mode = 'module:foo.bar'
